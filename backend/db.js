@@ -1,10 +1,18 @@
 const mongoose = require('mongoose');
-const mongoURI = "mongodb+srv://bhoomildayani182:Bhoomil@1234@inotebook.tjlkwau.mongodb.net/?retryWrites=true&w=majority";
 
 const connectToMongo = () => {
-    mongoose.connect(mongoURI, ()=>{
-        console.log("connect to mongo successfully");
+    mongoose
+    .connect(
+      "mongodb+srv://rajbusa:hVXlUdJ1iGqrEara@cluster0.w18p2pv.mongodb.net/test",
+    { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }
+    )
+    .then(() => {
+      console.log("Connected to database ");
     })
+    .catch((err) => {
+      console.error(`Error connecting to the database. \n${err}`);
+    });
 }
 
 module.exports = connectToMongo;
+// mongodb+srv://bhoomildayani182:fAFbrbP8n8Ooemi2@cluster0.pvcmcei.mongodb.net/test
