@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { useNavigate } from 'react-router-dom';
+import port from '../port';
 
 const Signup = (props) => {
 
@@ -14,7 +15,7 @@ const Signup = (props) => {
 
   let handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:5000/api/auth/createuser", {
+    const response = await fetch(`${port}/api/auth/createuser`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

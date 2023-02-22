@@ -1,8 +1,8 @@
 import NoteContext from "./noteContext";
 import { useState } from "react";
-
+import port from "../../port";
 const NoteState = (props) => {
-    const host = "http://localhost:5000"
+    const host = port
     const n = [];       
     const [notes, setNotes] = useState(n)
       
